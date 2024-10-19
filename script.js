@@ -6,8 +6,8 @@ async function clearkeys(id){
 const response=await fetch('clearkeys.json');
 const clearkeys=await response.json();
 return{
-kid:clearkeys[id][0],
-key:clearkeys[id][1]}}
+kid:clearkeys[id].kid,
+key:clearkeys[id].key}}
 async function init(){
 const params=new URLSearchParams(window.location.search);
 const id=params.get('id');
