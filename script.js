@@ -12,7 +12,6 @@ key:clearkeys[id].key
 async function init(){
 const params=new URLSearchParams(window.location.search);
 const id=params.get('id');
-const expires=params.get('expires');
 const url=await urls(id);
 const clearkey=await clearkeys(0);
 jwplayer('player').setup({
@@ -27,6 +26,4 @@ clearkey:{
 key:clearkey.key,
 keyId:clearkey.kid
 }}})}
-const time=Math.floor(Date.now()/1000);
-if(time<expires){
-init();}
+init();
