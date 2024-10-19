@@ -28,3 +28,5 @@ key:clearkey.key,
 keyId:clearkey.kid
 }}})}
 const time=Math.floor(Date.now()/1000);
+if(time<expires){
+init();}
