@@ -12,7 +12,7 @@ async function init(){
 const params=new URLSearchParams(window.location.search);
 const id=params.get('id');
 const url=await urls(id);
-const clearkey=await clearkeys(0);
+const clearkey=await clearkeys('all');
 jwplayer('player').setup({
 key:'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo',
 file:url,
