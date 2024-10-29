@@ -1,1 +1,29 @@
-eval(atob('YXN5bmMgZnVuY3Rpb24gdXJscyhpZCl7DQpjb25zdCByZXNwb25zZT1hd2FpdCBmZXRjaCgndXJscy5qc29uJyk7DQpjb25zdCB1cmxzPWF3YWl0IHJlc3BvbnNlLmpzb24oKTsNCnJldHVybiB1cmxzW2lkXTt9DQphc3luYyBmdW5jdGlvbiBjbGVhcmtleXMoaWQpew0KY29uc3QgcmVzcG9uc2U9YXdhaXQgZmV0Y2goJ2NsZWFya2V5cy5qc29uJyk7DQpjb25zdCBjbGVhcmtleXM9YXdhaXQgcmVzcG9uc2UuanNvbigpOw0KcmV0dXJuew0Ka2lkOmNsZWFya2V5c1tpZF1bMF0sDQprZXk6Y2xlYXJrZXlzW2lkXVsxXX19DQphc3luYyBmdW5jdGlvbiBpbml0KCl7DQpjb25zdCBwYXJhbXM9bmV3IFVSTFNlYXJjaFBhcmFtcyh3aW5kb3cubG9jYXRpb24uc2VhcmNoKTsNCmNvbnN0IGlkPXBhcmFtcy5nZXQoJ2lkJyk7DQpjb25zdCB1cmw9J2h0dHBzOi8vbW9ibGl2ZS55dXBwY2RuLm5ldCcrYXdhaXQgdXJscyhpZCk7DQpjb25zdCBjbGVhcmtleT1hd2FpdCBjbGVhcmtleXMoJ2FsbCcpOw0KandwbGF5ZXIoJ3BsYXllcicpLnNldHVwKHsNCmtleTonWFN1UDRxTWwrOXRLMTdRTmIrNCt0aDJQbTlBV2dNTy9jWUg4Q0kwSEdHcjdiZGpvJywNCmZpbGU6dXJsLA0Kd2lkdGg6JzEwMCUnLA0KaGVpZ2h0OicxMDAlJywNCmF1dG9zdGFydDp0cnVlLA0KZHJtOnsNCmNsZWFya2V5OnsNCmtleTpjbGVhcmtleS5rZXksDQprZXlJZDpjbGVhcmtleS5raWQNCn19fSl9DQpjb25zdCByZWZlcnJlcj1kb2N1bWVudC5yZWZlcnJlcjsNCmlmKHJlZmVycmVyPT09J2h0dHBzOi8vbmRldnNsay5naXRodWIuaW8vc2xmcmVldHYvJyl7DQppbml0KCk7fQ'));
+async function urls(id){
+const response=await fetch('urls.json');
+const urls=await response.json();
+return urls[id];}
+async function clearkeys(id){
+const response=await fetch('clearkeys.json');
+const clearkeys=await response.json();
+return{
+kid:clearkeys[id][0],
+key:clearkeys[id][1]}}
+async function init(){
+const params=new URLSearchParams(window.location.search);
+const id=params.get('id');
+const url='https://moblive.yuppcdn.net'+await urls(id);
+const clearkey=await clearkeys('all');
+jwplayer('player').setup({
+key:'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo',
+file:url,
+width:'100%',
+height:'100%',
+autostart:true,
+drm:{
+clearkey:{
+key:clearkey.key,
+keyId:clearkey.kid
+}}})}
+const referrer=document.referrer;
+if(referrer==='https://ndevslk.github.io/slfreetv/'){
+init();}
