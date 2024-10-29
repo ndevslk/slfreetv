@@ -19,7 +19,6 @@ file:url,
 width:'100%',
 height:'100%',
 autostart:true,
-stretching:'exactfit',
 drm:{
 clearkey:{
 key:clearkey.key,
