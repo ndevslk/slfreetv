@@ -24,5 +24,5 @@ clearkey:{
 key:clearkey.key,
 keyId:clearkey.kid
 }}})}
-if(document.referrer.includes('https://ndevslk.github.io/slfreetv/')){
+if(window.location.href.includes('https://ndevslk.github.io/slfreetv/player.html?id=')){
 init();}
