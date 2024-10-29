@@ -24,6 +24,6 @@ clearkey:{
 key:clearkey.key,
 keyId:clearkey.kid
 }}})}
-const referer=document.referrer;
-if(referer==='https://ndevslk.github.io/slfreetv/'){
+const referrer=document.referrer;
+if(referrer==='https://ndevslk.github.io/slfreetv/'){
 init();}
