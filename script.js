@@ -25,5 +25,5 @@ key:clearkey.key,
 keyId:clearkey.kid
 }}})}
 const referrer=document.referrer;
-if(referrer==='https://ndevslk.github.io/slfreetv/'){
+if(referrer=='https://ndevslk.github.io/slfreetv/'){
 init();}
