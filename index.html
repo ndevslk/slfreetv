@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
 document.body.style.display='none';
 const url='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
 try{
-const response=await fetch(url);
+const response=await fetch(url,{cache:'no-store'});
 if(response.ok){
 document.body.style.display='block';
 }else{
